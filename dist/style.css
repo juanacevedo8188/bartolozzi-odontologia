@@ -354,7 +354,7 @@ h3{font-weight:calc(var(--display-weight) + 40)}
 .palette-switch button[aria-pressed=true]{border-color:#fff;box-shadow:0 0 0 2px var(--accent)}
 /* Hero: muela de cristal con anatomía grabada */
 .hero-stage .stage-tilt{position:relative;width:min(100%,360px);margin:24px auto 10px;transform-style:preserve-3d}
-.gt{position:relative;aspect-ratio:270/398;animation:float 7s ease-in-out infinite}
+.gt{position:relative;aspect-ratio:270/400;animation:float 7s ease-in-out infinite}
 .gt-blobs{position:absolute;inset:-8%;filter:blur(38px);pointer-events:none}
 .gt-blobs span{position:absolute;width:62%;height:48%;border-radius:50%;opacity:.9;animation:blob 14s ease-in-out infinite}
 .gt-blobs span:nth-child(1){background:var(--accent);left:6%;top:6%}
@@ -411,3 +411,10 @@ h3{font-weight:calc(var(--display-weight) + 40)}
 .hero-stats .plus::before{content:"+"}
 .hero h1{font-size:clamp(42px,4.6vw,68px)}
 @media(max-width:760px){.site-header .button.small{white-space:nowrap;padding:10px 14px;font-size:13px}}
+/* Implante: posiciones de rótulos */
+.gt-label.l1{top:12%}
+.gt-label.l2{top:40%;left:62%}
+.gt-label.l2 i{width:80px}
+.gt-label.l3{top:68%;right:80%}
+@media(min-width:761px){.hero-stage .stage-tilt{width:min(100%,330px)}}
+@media(max-width:760px){.hero-stage .stage-tilt{width:min(56%,220px)}.gt-label.l3{right:auto;left:66%;flex-direction:row-reverse}.gt-label.l3 i{background:linear-gradient(90deg,var(--accent-hi),transparent)}.gt-label.l3 i::after{margin-left:0}}

@@ -1,6 +1,6 @@
 # Bartolozzi Clínica Odontológica — propuesta
 
-Landing estática en español (HTML, CSS y JavaScript, sin dependencias ni build): hero con muela de cristal animada, tratamientos, ubicación con mapa, cobertura, pasos, preguntas frecuentes, reseñas en Google, formulario y asistente de turnos por WhatsApp, y animación de scroll (un cepillo limpia el diente). Basada en la propuesta hecha para Kder Odontología.
+Landing estática en español (HTML, CSS y JavaScript, sin dependencias ni build): hero con un implante de cristal animado (corona, pilar e implante), tratamientos, ubicación con mapa, cobertura, pasos, preguntas frecuentes, reseñas en Google, formulario y asistente de turnos por WhatsApp, y animación de scroll (un cepillo limpia el diente). Basada en la propuesta hecha para Kder Odontología.
 
 ## Vista local
 
