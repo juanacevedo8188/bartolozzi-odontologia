@@ -88,3 +88,19 @@ document.querySelector('#copy').addEventListener('click',async()=>{
  apply(saved);
  buttons.forEach(button=>button.addEventListener('click',()=>apply(button.dataset.paletteSet)));
 })();
+
+// Selectores del formulario: se muestran como botones (el <select> queda oculto y sigue guardando el valor).
+document.querySelectorAll('#form select').forEach(select=>{
+ const group=document.createElement('div');group.className='pills';group.setAttribute('role','radiogroup');
+ const label=document.querySelector(`label[for="${select.id}"]`);
+ if(label){label.id=label.id||select.id+'-label';group.setAttribute('aria-labelledby',label.id);}
+ [...select.options].forEach(option=>{
+  const button=document.createElement('button');button.type='button';button.textContent=option.text;button.setAttribute('role','radio');
+  const sync=()=>group.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-checked',String(i===select.selectedIndex)));
+  button.addEventListener('click',()=>{select.value=option.value;select.dispatchEvent(new Event('change',{bubbles:true}));sync();});
+  group.appendChild(button);
+ });
+ group.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-checked',String(i===select.selectedIndex)));
+ select.classList.add('select-hidden');select.tabIndex=-1;select.setAttribute('aria-hidden','true');
+ select.after(group);
+});
