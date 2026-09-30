@@ -17,6 +17,7 @@ Sitio estático: Build Command vacío, Output Directory **dist** (`vercel.json` 
 ## Archivos
 
 - `dist/index.html`: contenido y estructura.
+- `dist/Propuesta-Bartolozzi-Odontologia.pdf`: la propuesta publicada dentro del sitio (botón en la sección “Propuesta” y enlace en la barra superior). Si se regenera el PDF en `material/`, copiarlo también acá.
 - `dist/style.css`: estilos; paletas al inicio (`html[data-palette=…]`).
 - `dist/app.js`: número de WhatsApp (`PHONE`), mapa, consulta de obra social, formulario y selectores de paleta y tipografía.
 - `dist/journey.js`, `dist/motion.js`: animaciones de scroll.

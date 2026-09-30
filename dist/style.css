@@ -418,3 +418,4 @@ h3{font-weight:calc(var(--display-weight) + 40)}
 .gt-label.l3{top:68%;right:80%}
 @media(min-width:761px){.hero-stage .stage-tilt{width:min(100%,330px)}}
 @media(max-width:760px){.hero-stage .stage-tilt{width:min(56%,220px)}.gt-label.l3{right:auto;left:66%;flex-direction:row-reverse}.gt-label.l3 i{background:linear-gradient(90deg,var(--accent-hi),transparent)}.gt-label.l3 i::after{margin-left:0}}
+.proposal-download{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin:30px 0 0}
