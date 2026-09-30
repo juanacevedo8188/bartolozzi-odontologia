@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0e7c7b">
+<title>Bartolozzi · Clínica Odontológica en Rosario | Propuesta</title>
+<meta name="description" content="Más de 60 años creando sonrisas en Rosario. Implantes, estética dental, rehabilitación oral y odontología para toda la familia en 3 de Febrero 1080. Pedí tu turno por WhatsApp.">
+<!-- Vista previa al compartir el link (WhatsApp, Instagram, Facebook). og:image necesita la URL completa: actualizar si cambia el dominio. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Bartolozzi Clínica Odontológica">
+<meta property="og:title" content="Bartolozzi Clínica Odontológica · Más de 60 años creando sonrisas">
+<meta property="og:description" content="Implantes, estética dental y rehabilitación oral en el centro de Rosario. Pedí tu turno por WhatsApp.">
+<meta property="og:url" content="https://bartolozzi-odontologia.vercel.app/">
+<meta property="og:image" content="https://bartolozzi-odontologia.vercel.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bartolozzi Clínica Odontológica: más de 60 años creando sonrisas en Rosario.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bartolozzi-odontologia.vercel.app/og-image.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Recorrido del scroll: un cepillo baja por el diente y lo va dejando limpio. -->
+<div class="smile-journey" aria-hidden="true">
+ <div class="journey-glow"></div>
+ <svg class="journey-tooth" viewBox="0 0 440 540" preserveAspectRatio="xMidYMid meet">
+  <defs>
+   <path id="j-molar" d="M90 168C82 122 106 80 146 76c24-3 38 10 46 24 10-18 26-28 44-28 20 0 34 12 42 28 10-18 30-26 48-20 32 12 40 50 26 90-8 32-10 54-20 76-6 32-2 84-6 134-2 40-12 70-30 70s-20-30-24-60c-4-34-14-74-52-88-38 14-48 54-52 88-4 30-6 60-24 60s-28-30-30-70c-4-50 0-102-6-134-10-22-12-46-18-78Z"/>
+   <clipPath id="j-clip"><use href="#j-molar"/></clipPath>
+   <clipPath id="clean-clip"><rect id="clean-rect" x="0" y="0" width="440" height="0"/></clipPath>
+   <linearGradient id="j-stain" x1="0" x2="1"><stop offset="0" stop-color="#cdb888"/><stop offset=".45" stop-color="#eadcb4"/><stop offset="1" stop-color="#c3ab78"/></linearGradient>
+   <linearGradient id="j-clean" x1="0" x2="1"><stop offset="0" stop-color="#d9d0bf"/><stop offset=".22" stop-color="#f5f1e8"/><stop offset=".45" stop-color="#fffefb"/><stop offset=".72" stop-color="#f2ede3"/><stop offset="1" stop-color="#cdc1aa"/></linearGradient>
+   <linearGradient id="j-gum" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f08f9b" stop-opacity=".9"/><stop offset=".5" stop-color="#f4aab3" stop-opacity=".55"/><stop offset="1" stop-color="#f8c9ce" stop-opacity="0"/></linearGradient>
+   <linearGradient id="j-gum-fade" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset=".18" stop-color="#fff"/><stop offset=".82" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+   <mask id="j-gum-mask"><rect width="440" height="540" fill="url(#j-gum-fade)"/></mask>
+   <filter id="j-b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+   <filter id="j-b10" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <!-- diente con sarro -->
+  <g clip-path="url(#j-clip)">
+   <rect width="440" height="540" fill="url(#j-stain)"/>
+   <use href="#j-molar" fill="none" stroke="#8d7447" stroke-width="26" opacity=".45" filter="url(#j-b10)"/>
+   <g fill="#a98b4e" opacity=".5" filter="url(#j-b4)">
+    <ellipse cx="150" cy="130" rx="22" ry="13"/><ellipse cx="268" cy="118" rx="18" ry="11"/><ellipse cx="214" cy="196" rx="30" ry="14"/><ellipse cx="128" cy="232" rx="14" ry="18"/><ellipse cx="310" cy="220" rx="18" ry="13"/><ellipse cx="150" cy="360" rx="10" ry="26"/><ellipse cx="290" cy="380" rx="10" ry="22"/>
+   </g>
+  </g>
+  <!-- diente limpio: se revela con el scroll -->
+  <g clip-path="url(#clean-clip)">
+   <g clip-path="url(#j-clip)">
+    <rect width="440" height="540" fill="url(#j-clean)"/>
+    <use href="#j-molar" fill="none" stroke="#9b8864" stroke-width="26" opacity=".35" filter="url(#j-b10)"/>
+    <use href="#j-molar" fill="none" style="stroke:var(--accent)" stroke-width="10" opacity=".6" filter="url(#j-b4)" transform="translate(-8 2)"/>
+    <g fill="#fff" filter="url(#j-b4)">
+     <ellipse cx="146" cy="100" rx="24" ry="10" transform="rotate(-22 146 100)"/>
+     <ellipse cx="236" cy="88" rx="20" ry="8"/>
+     <ellipse cx="128" cy="186" rx="9" ry="56" opacity=".85" transform="rotate(-6 128 186)"/>
+    </g>
+   </g>
+   <use href="#j-molar" fill="none" style="stroke:var(--accent-hi)" stroke-width="2"/>
+  </g>
+  <!-- encía: abraza el cuello y se desvanece hacia abajo y a los costados -->
+  <path class="gum" mask="url(#j-gum-mask)" d="M24 258c30-24 62-20 84-12 18 7 30 10 44 10 22 0 44-8 68-8s46 8 68 8c14 0 26-3 44-10 22-8 54-12 84 12v230H24Z" fill="url(#j-gum)"/>
+  <path mask="url(#j-gum-mask)" d="M24 258c30-24 62-20 84-12 18 7 30 10 44 10 22 0 44-8 68-8s46 8 68 8c14 0 26-3 44-10 22-8 54-12 84 12" fill="none" stroke="#e57986" stroke-width="3" opacity=".7"/>
+  <!-- cepillo -->
+  <g id="journey-brush" class="journey-brush">
+   <rect x="30" y="-3" width="380" height="5" rx="2.5" class="brush-line"/>
+   <g transform="translate(318 -48)">
+    <rect x="30" y="26" width="110" height="22" rx="11" style="fill:var(--brand)"/>
+    <rect x="-6" y="0" width="62" height="30" rx="9" style="fill:var(--brand-light)"/>
+    <g fill="#ffffff" style="stroke:var(--accent-hi)" stroke-width="1.5"><rect x="-2" y="-18" width="8" height="20" rx="3"/><rect x="9" y="-18" width="8" height="20" rx="3"/><rect x="20" y="-18" width="8" height="20" rx="3"/><rect x="31" y="-18" width="8" height="20" rx="3"/><rect x="42" y="-18" width="8" height="20" rx="3"/></g>
+   </g>
+   <g class="foam" fill="#ffffff"><circle cx="318" cy="-26" r="10"/><circle cx="298" cy="-12" r="7"/><circle cx="340" cy="-6" r="6"/></g>
+  </g>
+  <!-- brillos del final -->
+  <g class="sparkles" fill="#ffffff">
+   <path d="M352 60l8 20 20 8-20 8-8 20-8-20-20-8 20-8Z"/>
+   <path d="M60 180l6 14 14 6-14 6-6 14-6-14-14-6 14-6Z"/>
+   <path d="M396 250l5 11 11 5-11 5-5 11-5-11-11-5 11-5Z"/>
+  </g>
+ </svg>
+ <p class="journey-caption"><span id="journey-label">Empezamos el control</span></p>
+</div>
+
+<div class="hero-shell">
+ <div class="hero-bg" aria-hidden="true">
+  <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span>
+  <div class="bubbles"><span style="--x:8%;--s:10px;--d:-0s;--t:11s"></span><span style="--x:18%;--s:6px;--d:-3s;--t:9s"></span><span style="--x:27%;--s:14px;--d:-6s;--t:13s"></span><span style="--x:38%;--s:8px;--d:-1.5s;--t:10s"></span><span style="--x:46%;--s:5px;--d:-7s;--t:8s"></span><span style="--x:55%;--s:12px;--d:-4s;--t:12s"></span><span style="--x:63%;--s:7px;--d:-9s;--t:9s"></span><span style="--x:71%;--s:16px;--d:-2s;--t:14s"></span><span style="--x:80%;--s:6px;--d:-5s;--t:9s"></span><span style="--x:88%;--s:11px;--d:-8s;--t:12s"></span><span style="--x:94%;--s:8px;--d:-0.8s;--t:10s"></span><span style="--x:33%;--s:4px;--d:-10s;--t:7s"></span></div>
+ </div>
+
+<div class="demo">PROPUESTA VISUAL <span>Contenido a confirmar con la clínica</span> <a href="#propuesta">Ver alcance</a>
+ <div class="palette-switch" role="group" aria-label="Probar paleta">Paleta: <button type="button" data-palette-set="menta" aria-pressed="true" title="Menta" aria-label="Menta" style="--sw-a:#0e7c7b;--sw-b:#5fe0d2"></button><button type="button" data-palette-set="oceano" aria-pressed="false" title="Océano" aria-label="Océano" style="--sw-a:#1d5fa8;--sw-b:#7cc7ff"></button><button type="button" data-palette-set="lavanda" aria-pressed="false" title="Lavanda" aria-label="Lavanda" style="--sw-a:#6a4fb8;--sw-b:#c4b2ff"></button><button type="button" data-palette-set="salvia" aria-pressed="false" title="Salvia" aria-label="Salvia" style="--sw-a:#4e7a5e;--sw-b:#c9e4a8"></button></div>
+ <div class="font-switch" role="group" aria-label="Probar tipografía">Tipografía: <button type="button" data-font-set="a" aria-pressed="true">A</button><button type="button" data-font-set="b" aria-pressed="false">B</button><button type="button" data-font-set="c" aria-pressed="false">C</button></div>
+</div>
+
+<header class="wrap site-header">
+ <a class="brand" href="#inicio" aria-label="Bartolozzi Clínica Odontológica, inicio">
+  <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" style="fill:var(--accent)"/><path d="M18 24c-1-10 7-13 12-9 1 1 3 1 4 0 5-4 13-1 12 9-1 7-3 11-4 17-1 8-2 13-4 13s-3-6-4-12c0-2-1-3-2-3s-2 1-2 3c-1 6-2 12-4 12s-3-5-4-13c-1-6-3-10-4-17Z" style="fill:var(--deep-3)"/></svg>
+  <span>BARTOLOZZI<small>CLÍNICA ODONTOLÓGICA</small></span>
+ </a>
+ <nav aria-label="Principal">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#tratamientos">Tratamientos</a>
+  <a href="#ubicacion">Ubicación</a>
+  <a href="#cobertura">Cobertura</a>
+  <a class="button small" href="https://wa.me/5493410000000" target="_blank" rel="noopener noreferrer">Pedir turno ↗</a>
+ </nav>
+</header>
+
+<section id="inicio" class="hero wrap">
+ <div class="hero-copy">
+  <p class="eyebrow reveal"><span class="pulse-dot" aria-hidden="true"></span>CLÍNICA ODONTOLÓGICA · ROSARIO</p>
+  <h1 class="reveal">Más de 60 años<br>creando<br><em>sonrisas.</em></h1>
+  <p class="intro reveal">Implantes, estética dental y rehabilitación oral en el centro de Rosario. Dr. Hugo Bartolozzi y equipo, con atención para toda la familia.</p>
+  <div class="actions reveal">
+   <a class="button glow" href="https://wa.me/5493410000000?text=Hola%2C%20Bartolozzi.%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener noreferrer">Pedir turno por WhatsApp ↗</a>
+   <a class="button ghost" href="#tratamientos">Ver tratamientos ↓</a>
+  </div>
+  <ul class="hero-stats reveal">
+   <li><strong class="plus" data-count="60">60</strong><span>años de trayectoria</span></li>
+   <li><strong data-count="5">5</strong><span>especialidades</span></li>
+   <li><strong>Todas</strong><span>las edades</span></li>
+  </ul>
+ </div>
+
+ <figure class="hero-stage">
+  <div class="stage-tilt">
+   <div class="gt">
+    <div class="gt-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="gt-glass" aria-hidden="true"></div>
+    <svg class="gt-lines" viewBox="84 72 270 398" preserveAspectRatio="none" role="img" aria-label="Ilustración de una muela de cristal con su anatomía: esmalte, pulpa y raíces">
+     <defs>
+      <clipPath id="tooth-obb" clipPathUnits="objectBoundingBox"><path transform="scale(.0037037 .0025126) translate(-84 -72)" d="M90 168C82 122 106 80 146 76c24-3 38 10 46 24 10-18 26-28 44-28 20 0 34 12 42 28 10-18 30-26 48-20 32 12 40 50 26 90-8 32-10 54-20 76-6 32-2 84-6 134-2 40-12 70-30 70s-20-30-24-60c-4-34-14-74-52-88-38 14-48 54-52 88-4 30-6 60-24 60s-28-30-30-70c-4-50 0-102-6-134-10-22-12-46-18-78Z"/></clipPath>
+      <linearGradient id="gt-edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity=".7"/></linearGradient>
+      <radialGradient id="gt-pulp" cx=".5" cy=".5" r=".5"><stop offset="0" style="stop-color:var(--accent)" stop-opacity=".9"/><stop offset="1" style="stop-color:var(--accent)" stop-opacity="0"/></radialGradient>
+     </defs>
+     <ellipse class="gt-pulse" cx="220" cy="215" rx="70" ry="60" fill="url(#gt-pulp)"/>
+     <g class="gt-anatomy" fill="none" stroke="#fff" vector-effect="non-scaling-stroke">
+      <path pathLength="1" d="M112 250C104 200 100 150 116 118c14-24 44-26 62-8 10 10 18 12 28-2 14-18 40-20 56-4 10 10 18 10 28 0 18-14 46 6 40 46-4 40-10 70-12 100"/>
+      <path pathLength="1" class="dash" d="M100 246c60 16 180 16 236-2"/>
+      <path pathLength="1" d="M170 200c0-30 16-40 30-24 10 10 30 10 40 0 14-16 30-6 30 24 0 30-20 50-50 50s-50-20-50-50Z"/>
+      <path pathLength="1" d="M186 240c-10 60-26 120-36 190M256 240c12 60 26 120 34 180M220 250c2 50 4 110 2 150"/>
+      <path pathLength="1" class="fine" d="M140 150l14 8M150 128l12 10M290 150l-14 8M282 128l-12 10M130 180l12 4M306 180l-12 4"/>
+     </g>
+     <path class="gt-edge" d="M90 168C82 122 106 80 146 76c24-3 38 10 46 24 10-18 26-28 44-28 20 0 34 12 42 28 10-18 30-26 48-20 32 12 40 50 26 90-8 32-10 54-20 76-6 32-2 84-6 134-2 40-12 70-30 70s-20-30-24-60c-4-34-14-74-52-88-38 14-48 54-52 88-4 30-6 60-24 60s-28-30-30-70c-4-50 0-102-6-134-10-22-12-46-18-78Z" fill="none" stroke="url(#gt-edge)" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <span class="gt-label l1"><b>Esmalte</b><i></i></span>
+    <span class="gt-label l2"><i></i><b>Pulpa</b></span>
+    <span class="gt-label l3"><b>Raíz</b><i></i></span>
+   </div>
+  </div>
+  <figcaption>Ilustración conceptual · Anatomía de una muela sana.</figcaption>
+ </figure>
+</section>
+<svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V40C240 90 480 0 720 22s480 70 720 10v58Z"/></svg>
+</div>
+
+<main class="site-main">
+
+<div class="ribbon"><div class="wrap">Más de 60 años creando sonrisas. <span>3 de Febrero 1080 · Rosario · Obras sociales y particulares</span></div></div>
+
+<section class="wrap section about" id="nosotros">
+ <div class="about-cards">
+  <article><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6Z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Trayectoria</h3><p>Más de 60 años de odontología en Rosario, de generación en generación.</p></article>
+  <article><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3 20c0-3 2-6 5-6s5 3 5 6M14 20c0-2 1-5 3-5s4 3 4 5"/></svg></span><h3>Toda la familia</h3><p>Atención para adultos y odontopediatría para los más chicos.</p></article>
+  <article><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11Z"/><circle cx="12" cy="10" r="2"/></svg></span><h3>En el centro</h3><p>En 3 de Febrero 1080, a pasos de todo.</p></article>
+ </div>
+ <div>
+  <p class="eyebrow">QUIÉNES SOMOS</p>
+  <h2>Una clínica con historia,<br>pensada para vos.</h2>
+  <p class="intro">Somos Bartolozzi Clínica Odontológica, en el centro de Rosario.</p>
+  <p>Desde hace más de 60 años acompañamos a las familias de la ciudad. Hoy el Dr. Hugo Bartolozzi y su equipo combinan esa experiencia con implantes, estética dental y rehabilitación oral.</p>
+  <p>Atendemos adultos y niños, con obras sociales y de manera particular, para que cuidar tu sonrisa sea simple.</p>
+  <a class="textlink" href="https://wa.me/5493410000000" target="_blank" rel="noopener noreferrer">Escribinos y coordinamos tu turno ↗</a>
+ </div>
+</section>
+
+<section class="wrap section" id="tratamientos">
+ <div class="sectionhead">
+  <div><p class="eyebrow">QUÉ HACEMOS</p><h2>Tratamientos para<br>cada etapa.</h2></div>
+  <p>Una primera consulta permite evaluar tu caso y definir el tratamiento. Los tratamientos listados deben confirmarse con la clínica.</p>
+ </div>
+ <div class="services-grid">
+  <article><span class="number">01</span><svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6C7 3.7 7.7 3 8.6 3h6.8c.9 0 1.6.7 1.6 1.6V7c0 1.7-1.3 3-3 3h-4C8.3 10 7 8.7 7 7Z"/><path d="M10 10v2h4v-2M10 12h4l-.6 8.4c-.1.9-.7 1.6-1.4 1.6s-1.3-.7-1.4-1.6Z"/><path d="M9.9 14.6h4.2M10.1 17.2h3.8"/></svg><h3>Implantes</h3><p>Reemplazo de piezas perdidas con implantes, para recuperar función y confianza al sonreír.</p></article>
+  <article><span class="number">02</span><svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5c-2.2 0-3.5 1.8-3.5 4.2 0 2 .7 3.3 1.2 4.9.5 1.7.6 3.4 1 5.3.3 1.6.8 2.6 1.6 2.6 1 0 1.3-1.3 1.6-3 .3-1.6.6-2.8 1.6-2.8s1.3 1.2 1.6 2.8c.3 1.7.6 3 1.6 3 .8 0 1.3-1 1.6-2.6.4-1.9.5-3.6 1-5.3.5-1.6 1.2-2.9 1.2-4.9 0-2.4-1.3-4.2-3.5-4.2-1.6 0-2.6.9-4.5.9s-2.9-.9-4.5-.9Z"/><path d="M19 1.8l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7Z"/></svg><h3>Estética dental</h3><p>Blanqueamiento, carillas y diseño de sonrisa para lograr un resultado natural.</p></article>
+  <article><span class="number">03</span><svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8.5C3 7.1 4.1 6 5.5 6h13C19.9 6 21 7.1 21 8.5V11c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2Z"/><path d="M9 6v7M15 6v7M5 13l.8 6.2c.1.8.5 1.3 1 1.3s.9-.5 1-1.3l.7-6.2M16.5 13l.7 6.2c.1.8.5 1.3 1 1.3s.9-.5 1-1.3L20 13"/></svg><h3>Rehabilitación oral</h3><p>Coronas, puentes y prótesis para devolverle a la boca su función y su estética.</p></article>
+  <article><span class="number">04</span><svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5c-2.2 0-3.5 1.8-3.5 4.2 0 2 .7 3.3 1.2 4.9.5 1.7.6 3.4 1 5.3.3 1.6.8 2.6 1.6 2.6 1 0 1.3-1.3 1.6-3 .3-1.6.6-2.8 1.6-2.8s1.3 1.2 1.6 2.8c.3 1.7.6 3 1.6 3 .8 0 1.3-1 1.6-2.6.4-1.9.5-3.6 1-5.3.5-1.6 1.2-2.9 1.2-4.9 0-2.4-1.3-4.2-3.5-4.2-1.6 0-2.6.9-4.5.9s-2.9-.9-4.5-.9Z"/></svg><h3>Odontología general</h3><p>Consultas, controles, arreglos de caries y limpiezas para mantener la boca sana.</p></article>
+  <article><span class="number">05</span><svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3.5c-2.2 0-3.5 1.8-3.5 4.2 0 2 .7 3.3 1.2 4.9.5 1.7.6 3.4 1 5.3.3 1.6.8 2.6 1.6 2.6 1 0 1.3-1.3 1.6-3 .3-1.6.6-2.8 1.6-2.8s1.3 1.2 1.6 2.8c.3 1.7.6 3 1.6 3 .8 0 1.3-1 1.6-2.6.4-1.9.5-3.6 1-5.3.5-1.6 1.2-2.9 1.2-4.9 0-2.4-1.3-4.2-3.5-4.2-1.6 0-2.6.9-4.5.9s-2.9-.9-4.5-.9Z"/><path d="M9.6 9.6h.01M14.4 9.6h.01M10 12.2c1.2 1 2.8 1 4 0"/></svg><h3>Odontopediatría</h3><p>Atención pensada para chicos, con un trato cercano desde la primera visita.</p></article>
+  <article class="service-cta"><span class="number">06</span><h3>¿No sabés qué necesitás?</h3><p>Contanos qué te pasa y te orientamos para sacar el turno indicado.</p><a class="button small" href="https://wa.me/5493410000000?text=Hola%2C%20Bartolozzi.%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer">Consultar ↗</a></article>
+ </div>
+</section>
+
+<section class="soft-band" id="ubicacion">
+ <div class="wrap section">
+  <div class="sectionhead">
+   <div><p class="eyebrow">DÓNDE ESTAMOS</p><h2>En el centro<br>de Rosario.</h2></div>
+   <p>Nos encontrás en 3 de Febrero 1080. Usá “Cómo llegar” para abrir la dirección en tu celular.</p>
+  </div>
+  <div class="sedes-grid">
+   <div>
+    <div id="real-map" class="sedes-map" aria-label="Mapa de la ubicación de Bartolozzi Clínica Odontológica en Rosario"></div>
+    <p id="map-error" hidden role="status">No se pudo cargar el mapa. Usá “Cómo llegar” para ver la dirección.</p>
+   </div>
+   <article class="sede-card">
+    <span class="number">CLÍNICA</span>
+    <h3>Bartolozzi</h3>
+    <p class="sede-address">3 de Febrero 1080, Rosario</p>
+    <dl>
+     <div><dt>WhatsApp</dt><dd>A confirmar</dd></div>
+     <div><dt>Horarios</dt><dd>A confirmar con la clínica</dd></div>
+    </dl>
+    <div class="sede-actions">
+     <a id="sede-turno" class="button small" href="https://wa.me/5493410000000" target="_blank" rel="noopener noreferrer">Pedir turno ↗</a>
+     <a class="textlink" href="https://maps.google.com/?cid=4107026062559746170" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="wrap section" id="cobertura">
+ <div class="sectionhead">
+  <div><p class="eyebrow">COBERTURA</p><h2>Atendemos con tu<br>cobertura o particular.</h2></div>
+  <p>Consultá antes de tu turno si tu plan u obra social está incluido y qué necesitás llevar.</p>
+ </div>
+ <div class="coverage-grid">
+  <article class="featured"><span class="number">SWISS MEDICAL</span><h3>Pacientes Swiss Medical</h3><p>La clínica figura en Doctoralia con atención para Swiss Medical.</p></article>
+  <article><span class="number">OBRAS SOCIALES</span><h3>Tu obra social</h3><p>Trabajamos con obras sociales. Escribinos para confirmar si la tuya está incluida.</p></article>
+  <article><span class="number">PARTICULARES</span><h3>Sin cobertura</h3><p>También atendemos pacientes particulares. Consultá por el tratamiento que necesitás.</p></article>
+ </div>
+ <form class="coverage-check" id="coverage-form">
+  <label for="obra-social">¿Tenés obra social? Consultá si la atendemos</label>
+  <div><input id="obra-social" maxlength="80" placeholder="Ej.: nombre de tu obra social o prepaga" required><button class="button" type="submit">Consultar por WhatsApp ↗</button></div>
+ </form>
+</section>
+
+<section class="soft-band">
+ <div class="wrap section">
+  <p class="eyebrow">DEL MENSAJE AL SILLÓN</p>
+  <h2>Sacar turno es simple.</h2>
+  <div class="steps">
+   <article><span>01</span><h3>Escribinos</h3><p>Contanos qué necesitás: un control, una molestia o un tratamiento puntual.</p></article>
+   <article><span>02</span><h3>Elegí día y horario</h3><p>Coordinamos un horario que te quede bien.</p></article>
+   <article><span>03</span><h3>Vení a tu consulta</h3><p>Traé tu credencial si tenés cobertura. En la consulta evaluamos tu caso.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="wrap section faq" id="preguntas">
+ <p class="eyebrow">PREGUNTAS FRECUENTES</p>
+ <h2>Lo que más nos consultan.</h2>
+ <details><summary>¿Atienden a chicos?</summary><p>Sí. La clínica ofrece odontopediatría. Consultá los días de atención.</p></details>
+ <details><summary>¿Qué obras sociales aceptan?</summary><p>Atendemos Swiss Medical y otras obras sociales. La lista definitiva debe confirmarla la clínica; mientras tanto, podés consultar la tuya por WhatsApp.</p></details>
+ <details><summary>Tengo dolor, ¿me pueden atender pronto?</summary><p>Escribinos por WhatsApp contando qué te pasa y te indicamos el primer turno disponible.</p></details>
+ <details><summary>¿Hacen implantes?</summary><p>Sí. En la primera consulta se evalúa tu caso y se explica el tratamiento indicado, con sus etapas y tiempos.</p></details>
+ <details><summary>¿Cuánto cuesta una consulta?</summary><p>Esta propuesta no incluye precios. Los valores y coberturas se informan en cada consulta.</p></details>
+</section>
+
+<section class="reviews-band" id="resenas">
+ <div class="wrap section reviews">
+  <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="38" height="38"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2-4.6-4.4 6.3-.9Z"/></svg><svg viewBox="0 0 24 24" width="38" height="38"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2-4.6-4.4 6.3-.9Z"/></svg><svg viewBox="0 0 24 24" width="38" height="38"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2-4.6-4.4 6.3-.9Z"/></svg><svg viewBox="0 0 24 24" width="38" height="38"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2-4.6-4.4 6.3-.9Z"/></svg><svg viewBox="0 0 24 24" width="38" height="38"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2-4.6-4.4 6.3-.9Z"/></svg></div>
+  <p class="eyebrow">TU OPINIÓN SUMA</p>
+  <h2>¿Ya te atendiste<br>en Bartolozzi?</h2>
+  <p class="intro">Contanos cómo fue tu experiencia en Google. Te lleva un minuto y ayuda a otras familias a encontrarnos.</p>
+  <div class="review-actions single">
+   <!-- Reemplazar por el enlace "Pedir reseñas" del Perfil de Empresa de Google (g.page/r/...). -->
+   <a class="review-card" href="https://maps.google.com/?cid=4107026062559746170" target="_blank" rel="noopener noreferrer"><span class="number">GOOGLE MAPS</span><strong>3 de Febrero 1080</strong><em>Dejar reseña ↗</em></a>
+  </div>
+  <p class="reviews-note">Se abre Google Maps: tocá “Escribir una reseña”. Necesitás una cuenta de Google.</p>
+ </div>
+</section>
+
+<section id="turno" class="contact">
+ <div class="wrap contactgrid">
+  <div>
+   <p class="eyebrow">PEDÍ TU TURNO</p>
+   <h2>Tu próxima<br>consulta empieza acá.</h2>
+   <p>Completá los datos y prepará tu mensaje para WhatsApp.</p>
+   <p class="contactnote">Revisá tu mensaje y abrilo en WhatsApp. El envío se confirma desde la aplicación; el sitio no guarda tus datos.</p>
+   <p><a class="button light" href="https://wa.me/5493410000000" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp ↗</a></p>
+  </div>
+  <form id="form">
+   <label for="nombre">Nombre</label>
+   <input id="nombre" required maxlength="80" placeholder="Tu nombre">
+   <label for="cobertura-form">Cobertura</label>
+   <select id="cobertura-form"><option>Particular</option><option>Swiss Medical</option><option>Otra obra social</option></select>
+   <label for="motivo">Motivo de la consulta</label>
+   <textarea id="motivo" required maxlength="600" rows="3" placeholder="Ej.: control y limpieza, consulta por implantes, blanqueamiento..."></textarea>
+   <button class="button" type="submit">Ver mensaje ↗</button>
+   <div id="result" hidden aria-live="polite">
+    <h3>Tu mensaje</h3>
+    <p id="message"></p>
+    <a id="send-whatsapp" class="button" href="https://wa.me/5493410000000" target="_blank" rel="noopener noreferrer">Abrir en WhatsApp ↗</a>
+    <button type="button" id="copy" class="copy">Copiar mensaje</button>
+    <p id="copy-status" role="status"></p>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="wrap section proposal" id="propuesta">
+ <p class="eyebrow">PARA REVISAR CON LA CLÍNICA</p>
+ <h2>De esta idea a una web propia.</h2>
+ <p class="intro">Una primera versión enfocada en presentar la clínica y facilitar los turnos.</p>
+ <div class="proposalgrid">
+  <article><h3>Qué incluiría</h3><ul><li>Diseño adaptado a celular y computadora</li><li>Tratamientos confirmados</li><li>Mapa y “Cómo llegar”</li><li>Asistente que arma el pedido de turno</li><li>Contacto por WhatsApp y redes</li></ul></article>
+  <article><h3>Qué necesitamos</h3><ul><li>Fotos de la clínica y del equipo, con permiso</li><li>Horarios de atención</li><li>Lista de obras sociales</li><li>Profesionales y matrículas, si se quieren mostrar</li><li>Confirmar teléfonos y WhatsApp</li></ul></article>
+  <article><h3>Qué definimos después</h3><ul><li>Alcance final y presupuesto de la web</li><li>Dominio y alojamiento</li><li>Plazo de entrega</li><li>Responsable de las actualizaciones</li><li>Mantenimiento y costos recurrentes</li></ul></article>
+ </div>
+</section>
+
+<section class="smile-finale" id="final">
+ <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Implantes</span><i>✦</i><span>Estética dental</span><i>✦</i><span>Rehabilitación oral</span><i>✦</i><span>Odontología general</span><i>✦</i><span>Odontopediatría</span><i>✦</i><span>Más de 60 años</span><i>✦</i><span>Obras sociales</span><i>✦</i><span>Particulares</span><i>✦</i><span>Implantes</span><i>✦</i><span>Estética dental</span><i>✦</i><span>Rehabilitación oral</span><i>✦</i><span>Odontología general</span><i>✦</i><span>Odontopediatría</span><i>✦</i><span>Más de 60 años</span><i>✦</i><span>Obras sociales</span><i>✦</i><span>Particulares</span><i>✦</i></div></div>
+ <div class="wrap finale-content">
+  <p class="eyebrow">SONRISA SANA</p>
+  <h2>Una sonrisa sana<br>empieza con una consulta.</h2>
+  <a class="button light glow" href="https://wa.me/5493410000000?text=Hola%2C%20Bartolozzi.%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener noreferrer">Pedir mi turno ↗</a>
+ </div>
+ <div class="marquee reverse" aria-hidden="true"><div class="marquee-track"><span>Particulares</span><i>✦</i><span>Obras sociales</span><i>✦</i><span>Más de 60 años</span><i>✦</i><span>Odontopediatría</span><i>✦</i><span>Odontología general</span><i>✦</i><span>Rehabilitación oral</span><i>✦</i><span>Estética dental</span><i>✦</i><span>Implantes</span><i>✦</i><span>Particulares</span><i>✦</i><span>Obras sociales</span><i>✦</i><span>Más de 60 años</span><i>✦</i><span>Odontopediatría</span><i>✦</i><span>Odontología general</span><i>✦</i><span>Rehabilitación oral</span><i>✦</i><span>Estética dental</span><i>✦</i><span>Implantes</span><i>✦</i></div></div>
+</section>
+</main>
+
+<footer class="site-footer">
+ <div class="wrap">
+  <a class="brand" href="#inicio" aria-label="Bartolozzi Clínica Odontológica, inicio">
+   <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#ffffff"/><path d="M18 24c-1-10 7-13 12-9 1 1 3 1 4 0 5-4 13-1 12 9-1 7-3 11-4 17-1 8-2 13-4 13s-3-6-4-12c0-2-1-3-2-3s-2 1-2 3c-1 6-2 12-4 12s-3-5-4-13c-1-6-3-10-4-17Z" style="fill:var(--brand)"/></svg>
+   <span>BARTOLOZZI<small>CLÍNICA ODONTOLÓGICA</small></span>
+  </a>
+  <a href="https://www.facebook.com/dr.hugobartolozzi/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+  <p>Boceto conceptual · No es el sitio oficial de la clínica.</p>
+ </div>
+</footer>
+
+<script src="leaflet.js"></script>
+<script src="app.js"></script>
+<script src="journey.js"></script>
+<script src="motion.js"></script>
+<script src="bot.js"></script>
+</body>
+</html>
